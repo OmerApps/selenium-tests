@@ -27,9 +27,9 @@ class SearchGoogle(unittest.TestCase):
             driver.find_element(By.NAME,"q").send_keys("python")
             driver.find_element(By.NAME,"q").submit()
             if (self.waitForElement(By.NAME,"q")):
-              links=  driver.find_elements_by_css_selector(".r")
+              links=  driver.find_elements_by_css_selector("h3.r a")
               for link in links:
-                 print(link.find_elements_by_tag_name("a").get_attribute("text§§§§"))
+                 print(link.get_attribute("text"))
 
 
 
