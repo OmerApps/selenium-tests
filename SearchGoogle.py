@@ -18,18 +18,18 @@ class SearchGoogle(unittest.TestCase):
                 expected_conditions.visibility_of_element_located((by, value))
             )
             return True
-        finally:
+        except:
             return False
     def searchInGoogle(self):
         driver=self.driver
         driver.get("http://www.google.co.il")
-        if (self.waitForElement("#q")):
-            driver.find_element_by_css_selector("#q").send_keys("python")
-            driver.find_element_by_css_selector("#q").submit()
-            if (self.waitForElement("#q")):
+        if (self.waitForElement(By.NAME,"q")):
+            driver.find_element(By.NAME,"q").send_keys("python")
+            driver.find_element(By.NAME,"q").submit()
+            if (self.waitForElement(By.NAME,"q")):
               links=  driver.find_elements_by_css_selector(".r")
               for link in links:
-                 print(link.find_elements_by_tag_name("a").get_attribute("text"))
+                 print(link.find_elements_by_tag_name("a").get_attribute("text§§§§"))
 
 
 
